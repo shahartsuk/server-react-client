@@ -1,0 +1,12 @@
+.size{
+    width: 550px !important;
+}
+.insert-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+}
+button{
+    width: 140px;
+}

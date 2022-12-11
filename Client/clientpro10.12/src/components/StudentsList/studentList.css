@@ -1,0 +1,25 @@
+.tableContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header{
+  display: flex;
+  border-bottom: 1px solid black;
+  width: 500px;
+}
+.data{
+  display: flex;
+  border-bottom: 1px solid black;
+  width: 500px;
+  align-items: center;
+}
+.space{
+  margin: 20px 100px 20px 0;
+}
+button{
+  width: 100px;
+  height: 40px;
+}
