@@ -14,7 +14,10 @@ export const StudentList = (props) => {
     initComponent();
   }, []);
   const removeStudent = async (id) => {
-    await axios.delete("http://localhost:3000/api/students", id);
+    studentArr.filter((s) => {
+      return s.id !== id;
+    });
+    await axios.delete(`http://localhost:3000/api/students:${id}`);
   };
   return (
     <div className="tableContainer">

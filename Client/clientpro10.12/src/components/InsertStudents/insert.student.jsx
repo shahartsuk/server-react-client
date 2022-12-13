@@ -8,9 +8,21 @@ export const AddStudent = (props) => {
   const [age, setAge] = useState("");
   const [id, setId] = useState(0);
   const addNewStudent = async () => {
-    setId((prev)=>prev=prev+1)
-    await addStudent({ id:id,firstName: firstName, lastName: lastName, age: age });
-    alert(`New student saved`);
+    if (firstName.length === 0) {
+      alert("Invalid stuent have to include first name");
+    } else if (lastName.length === 0)
+      alert("Invalid stuent have to include last name");
+    else if (age.length === 0) alert("Invalid stuent have to include age");
+    else {
+      setId((prev) => (prev = prev + 1));
+      await addStudent({
+        id: id,
+        firstName: firstName,
+        lastName: lastName,
+        age: age,
+      });
+      alert(`New student saved`);
+    }
   };
   return (
     <div className="insert-container">

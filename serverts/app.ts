@@ -24,11 +24,11 @@ app.post("/api/students", function (req: Request, res: Response) {
   arrayOfStudents.push(students);
   res.send(studentsArr);
 });
-app.delete("/api/students", function (req: Request, res: Response) {
-  const index = studentsArr.indexOf(req.body.id);
-  studentsArr.splice(index, 1);
-  console.log(studentsArr);
-  res.send(studentsArr);
+app.delete("/api/students/:id", function (req: Request, res: Response) {
+  const id = parseInt(req.params.id);
+  let temp = studentsArr.filter((s) => s.operation !== id);
+  studentsArr = temp;
+  res.send();
 });
 
 app.listen(3000);
